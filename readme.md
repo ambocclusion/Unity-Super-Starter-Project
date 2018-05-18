@@ -13,3 +13,8 @@ Provided under MIT license
 Made by Allen-Michael Brower
 
 @ambocclusion on Twitter for questions or comments!
+
+## Utilizes
+Unity-ThirdPersonController by dbrizov
+https://github.com/dbrizov/Unity-ThirdPersonController
+Used under MIT License
