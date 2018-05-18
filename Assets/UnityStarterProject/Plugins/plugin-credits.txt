@@ -1,0 +1,3 @@
+Unity-ThirdPersonController by dbrizov
+https://github.com/dbrizov/Unity-ThirdPersonController
+Used under MIT License
