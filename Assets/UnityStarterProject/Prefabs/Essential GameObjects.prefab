@@ -693,7 +693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c232c024468975642a507a30828e30f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  postProcessingMode: 1
+  postProcessingMode: 3
   antiAliasingQuality: 1
 --- !u!114 &114327434841448802
 MonoBehaviour:
