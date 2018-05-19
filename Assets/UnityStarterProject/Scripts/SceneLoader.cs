@@ -17,6 +17,12 @@ namespace UnityStarterProject
         #endregion
 
         #region Scene Loading
+        public void ChangeScene(int sceneIndex)
+        {
+            string sceneName = SceneManager.GetSceneByBuildIndex(sceneIndex).name;
+            ChangeScene(sceneName);
+        }
+
         public void ChangeScene(string sceneName)
         {
             ChangeScene(sceneName, LoadSceneMode.Single);

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224363128195798216}
   - component: {fileID: 222693085763905038}
   - component: {fileID: 114207748671008926}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224394117912971214}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,8 +53,24 @@ GameObject:
   - component: {fileID: 224759005369100988}
   - component: {fileID: 222416308803035756}
   - component: {fileID: 114646216569816282}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Header
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1232366666578752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4336518310467434}
+  - component: {fileID: 114320628935145248}
+  m_Layer: 0
+  m_Name: Quality Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +87,7 @@ GameObject:
   - component: {fileID: 223093737014829914}
   - component: {fileID: 114947825506835232}
   - component: {fileID: 114133369406235772}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Pause Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224424192111879374}
   - component: {fileID: 114741744287145630}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +120,7 @@ GameObject:
   - component: {fileID: 224314884171942862}
   - component: {fileID: 222477245502314972}
   - component: {fileID: 114327434841448802}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +154,7 @@ GameObject:
   - component: {fileID: 224652286779053434}
   - component: {fileID: 222600779931928894}
   - component: {fileID: 114875083682269192}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +172,7 @@ GameObject:
   - component: {fileID: 222589542101158986}
   - component: {fileID: 114339029556750440}
   - component: {fileID: 114524240336725652}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Resume Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +189,7 @@ GameObject:
   - component: {fileID: 224409762126239532}
   - component: {fileID: 222632229348696514}
   - component: {fileID: 114829188534768214}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Loading Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +206,7 @@ GameObject:
   - component: {fileID: 224106614894495374}
   - component: {fileID: 222635529294075788}
   - component: {fileID: 114159659985494468}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +224,7 @@ GameObject:
   - component: {fileID: 222358776307770174}
   - component: {fileID: 114461238441983206}
   - component: {fileID: 114367360323398006}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Buttons Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +241,7 @@ GameObject:
   - component: {fileID: 224524179261913368}
   - component: {fileID: 222987191671003390}
   - component: {fileID: 114665119211456400}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +291,7 @@ GameObject:
   - component: {fileID: 114006271925522620}
   - component: {fileID: 114254882147996016}
   - component: {fileID: 114246387598111240}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Loading Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +306,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224934814130438310}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +340,7 @@ GameObject:
   - component: {fileID: 222826784936037514}
   - component: {fileID: 114529265466704744}
   - component: {fileID: 114163448811238444}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Main Menu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +357,7 @@ GameObject:
   - component: {fileID: 224586056092083934}
   - component: {fileID: 222093307453996812}
   - component: {fileID: 114261952554826930}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,13 +374,26 @@ GameObject:
   - component: {fileID: 224899679617784920}
   - component: {fileID: 222517979716772650}
   - component: {fileID: 114978685439845052}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Pause Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4336518310467434
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1232366666578752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4932550372276564}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4352396019849940
 Transform:
   m_ObjectHideFlags: 1
@@ -419,6 +448,7 @@ Transform:
   - {fileID: 224585289800257216}
   - {fileID: 4707175008110876}
   - {fileID: 4560795848796864}
+  - {fileID: 4336518310467434}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -652,6 +682,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &114320628935145248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1232366666578752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c232c024468975642a507a30828e30f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  postProcessingMode: 1
+  antiAliasingQuality: 1
 --- !u!114 &114327434841448802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -720,7 +763,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 32
     m_Right: 32
-    m_Top: 32
+    m_Top: 16
     m_Bottom: 32
   m_ChildAlignment: 1
   m_Spacing: 0
@@ -1387,8 +1430,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -53}
-  m_SizeDelta: {x: -698.07, y: -361}
+  m_AnchoredPosition: {x: 0, y: -50.90002}
+  m_SizeDelta: {x: -698.07, y: -349.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224585289800257216
 RectTransform:
