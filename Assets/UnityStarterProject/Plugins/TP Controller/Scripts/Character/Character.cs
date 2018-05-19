@@ -4,7 +4,7 @@ public class Character : MonoBehaviour
 {
     // Serialized fields
     [SerializeField]
-    private new Camera camera = null;
+    private Camera myCamera = null;
 
     [SerializeField]
     private MovementSettings movementSettings = null;
@@ -90,7 +90,7 @@ public class Character : MonoBehaviour
     {
         get
         {
-            return this.camera;
+            return this.myCamera;
         }
     }
 

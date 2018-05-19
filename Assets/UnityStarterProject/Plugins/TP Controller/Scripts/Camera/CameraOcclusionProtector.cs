@@ -46,7 +46,7 @@ public class CameraOcclusionProtector : MonoBehaviour
 #endif
 
     // Private fields
-    private new Camera camera;
+    private Camera myCamera;
     private Transform pivot; // The point at which the camera pivots around
     private Vector3 cameraVelocity;
     private float nearClipPlaneHalfHeight;
@@ -55,12 +55,12 @@ public class CameraOcclusionProtector : MonoBehaviour
 
     protected virtual void Awake()
     {
-        this.camera = this.GetComponent<Camera>();
+        this.myCamera = this.GetComponent<Camera>();
         this.pivot = this.transform.parent;
 
-        float halfFOV = (this.camera.fieldOfView / 2.0f) * Mathf.Deg2Rad; // vertical FOV in radians
-        this.nearClipPlaneHalfHeight = Mathf.Tan(halfFOV) * this.camera.nearClipPlane * this.nearClipPlaneExtentMultiplier;
-        this.nearClipPlaneHalfWidth = nearClipPlaneHalfHeight * this.camera.aspect;
+        float halfFOV = (this.myCamera.fieldOfView / 2.0f) * Mathf.Deg2Rad; // vertical FOV in radians
+        this.nearClipPlaneHalfHeight = Mathf.Tan(halfFOV) * this.myCamera.nearClipPlane * this.nearClipPlaneExtentMultiplier;
+        this.nearClipPlaneHalfWidth = nearClipPlaneHalfHeight * this.myCamera.aspect;
         this.sphereCastRadius = new Vector2(this.nearClipPlaneHalfWidth, this.nearClipPlaneHalfHeight).magnitude; // Pythagoras
     }
 
@@ -80,7 +80,7 @@ public class CameraOcclusionProtector : MonoBehaviour
         {
             ClipPlaneCornerPoints nearClipPlaneCornerPoints = this.GetNearClipPlaneCornerPoints(this.transform.position);
 
-            Debug.DrawLine(this.pivot.position, this.transform.position - this.transform.forward * this.camera.nearClipPlane, Color.red);
+            Debug.DrawLine(this.pivot.position, this.transform.position - this.transform.forward * this.myCamera.nearClipPlane, Color.red);
             Debug.DrawLine(this.pivot.position, nearClipPlaneCornerPoints.UpperLeft, Color.green);
             Debug.DrawLine(this.pivot.position, nearClipPlaneCornerPoints.UpperRight, Color.green);
             Debug.DrawLine(this.pivot.position, nearClipPlaneCornerPoints.LowerLeft, Color.green);
@@ -103,7 +103,7 @@ public class CameraOcclusionProtector : MonoBehaviour
     {
         // Cast a sphere along a ray to see if the camera is occluded
         Ray ray = new Ray(this.pivot.transform.position, -this.transform.forward);
-        float rayLength = this.distanceToTarget - this.camera.nearClipPlane;
+        float rayLength = this.distanceToTarget - this.myCamera.nearClipPlane;
         RaycastHit hit;
 
         if (Physics.SphereCast(ray, this.sphereCastRadius, out hit, rayLength, ~this.ignoreLayerMask))
@@ -141,19 +141,19 @@ public class CameraOcclusionProtector : MonoBehaviour
 
         nearClipPlanePoints.UpperLeft = cameraPosition - this.transform.right * nearClipPlaneHalfWidth;
         nearClipPlanePoints.UpperLeft += this.transform.up * nearClipPlaneHalfHeight;
-        nearClipPlanePoints.UpperLeft += this.transform.forward * this.camera.nearClipPlane;
+        nearClipPlanePoints.UpperLeft += this.transform.forward * this.myCamera.nearClipPlane;
 
         nearClipPlanePoints.UpperRight = cameraPosition + this.transform.right * nearClipPlaneHalfWidth;
         nearClipPlanePoints.UpperRight += this.transform.up * nearClipPlaneHalfHeight;
-        nearClipPlanePoints.UpperRight += this.transform.forward * this.camera.nearClipPlane;
+        nearClipPlanePoints.UpperRight += this.transform.forward * this.myCamera.nearClipPlane;
 
         nearClipPlanePoints.LowerLeft = cameraPosition - this.transform.right * nearClipPlaneHalfWidth;
         nearClipPlanePoints.LowerLeft -= this.transform.up * nearClipPlaneHalfHeight;
-        nearClipPlanePoints.LowerLeft += this.transform.forward * this.camera.nearClipPlane;
+        nearClipPlanePoints.LowerLeft += this.transform.forward * this.myCamera.nearClipPlane;
 
         nearClipPlanePoints.LowerRight = cameraPosition + this.transform.right * nearClipPlaneHalfWidth;
         nearClipPlanePoints.LowerRight -= this.transform.up * nearClipPlaneHalfHeight;
-        nearClipPlanePoints.LowerRight += this.transform.forward * this.camera.nearClipPlane;
+        nearClipPlanePoints.LowerRight += this.transform.forward * this.myCamera.nearClipPlane;
 
         return nearClipPlanePoints;
     }
