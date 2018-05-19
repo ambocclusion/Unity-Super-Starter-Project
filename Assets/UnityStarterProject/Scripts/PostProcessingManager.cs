@@ -6,6 +6,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 namespace UnityStarterProject
 {
+    [ExecuteInEditMode]
     public class PostProcessingManager : MonoBehaviour
     {
         // Assumes low to high

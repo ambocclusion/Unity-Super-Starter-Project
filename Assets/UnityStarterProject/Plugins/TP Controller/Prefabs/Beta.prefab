@@ -2094,7 +2094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2f9fa4fe47ea94c9fb7ce83d43e264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
+  myCamera: {fileID: 0}
   movementSettings:
     acceleration: 10
     walkSpeed: 2

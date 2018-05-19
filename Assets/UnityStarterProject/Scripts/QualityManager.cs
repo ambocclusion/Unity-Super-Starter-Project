@@ -32,9 +32,19 @@ namespace UnityStarterProject
             QualitySettings.SetQualityLevel(index);
         }
 
+        public int GetQuality()
+        {
+            return QualitySettings.GetQualityLevel();
+        }
+
         public void SetPixelLightCount(int count)
         {
             QualitySettings.pixelLightCount = count;
+        }
+
+        public int GetPixelLightCount()
+        {
+            return QualitySettings.pixelLightCount;
         }
 
         public void SetTextureQuality(int index)
@@ -42,9 +52,19 @@ namespace UnityStarterProject
             QualitySettings.masterTextureLimit = index;
         }
 
+        public int GetTextureQuality()
+        {
+            return QualitySettings.masterTextureLimit;
+        }
+
         public void SetAnisotropicTextures(int index)
         {
             QualitySettings.anisotropicFiltering = (AnisotropicFiltering)index;
+        }
+
+        public int GetAnisotropicFiltering()
+        {
+            return (int)QualitySettings.anisotropicFiltering;
         }
 
         public void SetAntiAliasing(int level)
