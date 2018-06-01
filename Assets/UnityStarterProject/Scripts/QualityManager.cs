@@ -27,6 +27,15 @@ namespace UnityStarterProject
         public PostProcessingQuality postProcessingMode = PostProcessingQuality.HIGH;
         public FxAntiAliasingQuality antiAliasingQuality = FxAntiAliasingQuality.FXAA;
 
+        public Resolution GetCurrentResolution()
+        {
+            return Screen.currentResolution;
+        }
+
+        public void SetResolution(Resolution resolutionToSet)
+        {
+        }
+
         public void SetQuality(int index)
         {
             QualitySettings.SetQualityLevel(index);
