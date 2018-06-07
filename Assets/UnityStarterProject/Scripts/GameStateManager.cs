@@ -68,6 +68,7 @@ namespace UnityStarterProject
             if (SceneIsPausable)
             {
                 CurrentState = GameStates.PAUSED;
+                Cursor.lockState = CursorLockMode.None;
             }
         }
 

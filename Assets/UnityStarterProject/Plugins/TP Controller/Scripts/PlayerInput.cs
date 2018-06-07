@@ -7,6 +7,11 @@ public static class PlayerInput
 
     public static Vector3 GetMovementInput(Camera relativeCamera)
     {
+        if (Input.GetAxis("Fire1") != 0)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
         Vector3 moveVector;
         float horizontalAxis = Input.GetAxis("Horizontal");
         float verticalAxis = Input.GetAxis("Vertical");

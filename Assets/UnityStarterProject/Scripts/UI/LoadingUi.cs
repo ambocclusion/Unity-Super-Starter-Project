@@ -37,10 +37,18 @@ namespace UnityStarterProject
         #region Private Methods
         private IEnumerator UpdateProgressBar(AsyncOperation operation)
         {
-            while (operation.progress != 1.0f)
+            while (!operation.isDone)
             {
                 LoadingBar.value = operation.progress / 0.9f;
                 yield return null;
+            }
+
+            // Delay for a few frames so we can guarantee that the scene is finished initializing. 
+            // 10 FixedUpdates is approx 1/5th a second if time step is 50.
+            // This should be enough to combat pop in and startup lag
+            for (int i = 0; i < 10; i++)
+            {
+                yield return new WaitForFixedUpdate();
             }
 
             ResetUi();

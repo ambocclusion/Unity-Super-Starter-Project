@@ -30,6 +30,7 @@ public class CameraController : MonoBehaviour
 
     protected virtual void Awake()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         this.pivot = this.transform.parent;
         this.rig = this.pivot.parent;
 
