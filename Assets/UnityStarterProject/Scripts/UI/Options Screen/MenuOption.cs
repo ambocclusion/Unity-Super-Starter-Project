@@ -8,11 +8,28 @@ namespace UnityStarterProject.UI.OptionsMenu
     {
         public Dropdown dropdown;
 
+        private bool initialized = false;
+
+        private void OnEnable()
+        {
+            if (initialized)
+            {
+                UpdateValues();
+            }
+        }
+
         private IEnumerator Start()
         {
-            yield return null;
+            yield return new WaitForFixedUpdate();
 
             UpdateValues();
+
+            if (dropdown)
+            {
+                dropdown.onValueChanged.AddListener(OptionChanged);
+            }
+
+            initialized = true;
         }
 
         public abstract void UpdateValues();

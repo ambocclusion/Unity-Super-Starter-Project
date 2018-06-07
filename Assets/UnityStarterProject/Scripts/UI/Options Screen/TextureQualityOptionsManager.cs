@@ -21,8 +21,6 @@ namespace UnityStarterProject.UI.OptionsMenu
             dropdown.AddOptions(qualities.ToList());
 
             Canvas.ForceUpdateCanvases();
-
-            dropdown.onValueChanged.AddListener(OptionChanged);
         }
 
         public override void UpdateValues()

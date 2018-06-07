@@ -24,8 +24,6 @@ namespace UnityStarterProject.UI.OptionsMenu
             dropdown.AddOptions(resolutionOptions);
 
             Canvas.ForceUpdateCanvases();
-
-            dropdown.onValueChanged.AddListener(OptionChanged);
         }
 
         public override void UpdateValues()

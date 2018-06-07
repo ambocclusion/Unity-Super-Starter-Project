@@ -26,8 +26,6 @@ namespace UnityStarterProject.UI.OptionsMenu
             dropdown.AddOptions(fullScreenOptions);
 
             Canvas.ForceUpdateCanvases();
-
-            dropdown.onValueChanged.AddListener(OptionChanged);
         }
 
         public override void UpdateValues()

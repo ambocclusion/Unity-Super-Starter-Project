@@ -33,8 +33,25 @@ namespace UnityStarterProject
 
         private void Start()
         {
+            if (!PlayerPrefs.HasKey(antiAliasingPref))
+            {
+                PlayerPrefs.SetInt(antiAliasingPref, (int)antiAliasingQuality);
+            }
+
+            if (!PlayerPrefs.HasKey(postProcessPref))
+            {
+                PlayerPrefs.SetInt(postProcessPref, (int)postProcessingMode);
+            }
+
             postProcessingMode = (PostProcessingQuality)PlayerPrefs.GetInt(postProcessPref);
             antiAliasingQuality = (FxAntiAliasingQuality)PlayerPrefs.GetInt(antiAliasingPref);
+        }
+
+        public void ResetSettings()
+        {
+            PlayerPrefs.DeleteAll();
+            postProcessingMode = PostProcessingQuality.HIGH;
+            antiAliasingQuality = FxAntiAliasingQuality.FXAA;
         }
 
         public void SetResolution(Resolution resolutionToSet)
@@ -115,6 +132,11 @@ namespace UnityStarterProject
 
         public FxAntiAliasingQuality GetAntiAliasing()
         {
+            if (!PlayerPrefs.HasKey(antiAliasingPref))
+            {
+                PlayerPrefs.SetInt(antiAliasingPref, (int)antiAliasingQuality);
+            }
+
             return antiAliasingQuality;
         }
 
@@ -166,6 +188,11 @@ namespace UnityStarterProject
 
         public PostProcessingQuality GetPostProcessingQuality()
         {
+            if (!PlayerPrefs.HasKey(postProcessPref))
+            {
+                PlayerPrefs.SetInt(postProcessPref, (int)postProcessingMode);
+            }
+
             return postProcessingMode;
         }
 
