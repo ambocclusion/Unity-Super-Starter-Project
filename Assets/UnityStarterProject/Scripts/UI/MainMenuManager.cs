@@ -7,6 +7,12 @@ namespace UnityStarterProject
 {
     public class MainMenuManager : MonoBehaviour
     {
+        private void Start()
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
         public void UpdateSettings()
         {
             MenuOption[] options = FindObjectsOfType<MenuOption>();
@@ -15,6 +21,8 @@ namespace UnityStarterProject
             {
                 option.UpdateValues();
             }
+
+            Canvas.ForceUpdateCanvases();
         }
 
         public void ResetSettings()

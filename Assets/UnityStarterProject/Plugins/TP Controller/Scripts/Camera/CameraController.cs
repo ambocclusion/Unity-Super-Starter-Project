@@ -31,14 +31,31 @@ public class CameraController : MonoBehaviour
     protected virtual void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        UnityStarterProject.GameStateManager.Instance.pauseEvents.Add(PauseEvent);
+        UnityStarterProject.GameStateManager.Instance.unpauseEvents.Add(UnpauseEvent);
+
         this.pivot = this.transform.parent;
         this.rig = this.pivot.parent;
 
         this.transform.localRotation = Quaternion.identity;
     }
 
+    private void OnDestroy()
+    {
+        UnityStarterProject.GameStateManager.Instance.pauseEvents.Remove(PauseEvent);
+        UnityStarterProject.GameStateManager.Instance.unpauseEvents.Remove(UnpauseEvent);
+    }
+
     protected virtual void Update()
     {
+        if (!UnityStarterProject.GameStateManager.Instance.IsPaused() && Input.GetAxis("Fire1") != 0)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
         var controlRotation = PlayerInput.GetMouseRotationInput();
         this.UpdateRotation(controlRotation);
     }
@@ -54,6 +71,18 @@ public class CameraController : MonoBehaviour
     //    cameraTargetLocalPosition.z = -distanceToTarget;
     //    this.transform.localPosition = cameraTargetLocalPosition;
     //}
+
+    private void PauseEvent()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void UnpauseEvent()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
     private void FollowTarget()
     {

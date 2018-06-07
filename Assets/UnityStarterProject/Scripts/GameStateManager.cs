@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,9 @@ namespace UnityStarterProject
         public GameStates CurrentState = GameStates.RUNNING;
         public bool SceneIsPausable = false;
         public GameObject PauseScreen;
+
+        public List<Action> pauseEvents = new List<Action>();
+        public List<Action> unpauseEvents = new List<Action>();
 
         protected override void Awake()
         {
@@ -68,14 +72,20 @@ namespace UnityStarterProject
             if (SceneIsPausable)
             {
                 CurrentState = GameStates.PAUSED;
-                Cursor.lockState = CursorLockMode.None;
+                pauseEvents.ForEach(p => p.Invoke());
             }
         }
 
         public void UnPauseGame()
         {
             CurrentState = GameStates.RUNNING;
+            unpauseEvents.ForEach(p => p.Invoke());
             Input.ResetInputAxes();
+        }
+
+        public bool IsPaused()
+        {
+            return CurrentState == GameStates.PAUSED;
         }
     }
 }

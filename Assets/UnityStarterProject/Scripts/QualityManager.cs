@@ -50,8 +50,7 @@ namespace UnityStarterProject
         public void ResetSettings()
         {
             PlayerPrefs.DeleteAll();
-            postProcessingMode = PostProcessingQuality.HIGH;
-            antiAliasingQuality = FxAntiAliasingQuality.FXAA;
+            SetQuality(3);
         }
 
         public void SetResolution(Resolution resolutionToSet)
@@ -85,8 +84,35 @@ namespace UnityStarterProject
         public void SetQuality(int index)
         {
             int vsync = GetVsync();
-            QualitySettings.SetQualityLevel(index);
+            QualitySettings.SetQualityLevel(index, true);
             SetVsync(vsync);
+
+            // Set AA and PostProcessing quality
+            switch (index)
+            {
+                case 0:     // very low
+                case 1:     // low
+                    SetPostProcessingQuality(0);
+                    SetAntiAliasing(0);
+                    break;
+                case 2:     // medium
+                    SetPostProcessingQuality(1);
+                    SetAntiAliasing(1);
+                    break;
+                case 3:     // high
+                    SetPostProcessingQuality(2);
+                    SetAntiAliasing(1);
+                    break;
+                case 4:     // very high
+                    SetPostProcessingQuality(2);
+                    SetAntiAliasing(1);
+                    break;
+                case 5:     // ultra
+                    SetPostProcessingQuality(3);
+                    SetAntiAliasing(3);
+                    break;
+            }
+
         }
 
         public int GetQuality()
