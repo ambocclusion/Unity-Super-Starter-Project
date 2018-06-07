@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
@@ -8,6 +9,9 @@ namespace UnityStarterProject
 {
     public class QualityManager : Singleton<QualityManager>
     {
+        public const string postProcessPref = "postProcessingMode";
+        public const string antiAliasingPref = "antiAliasingQuality";
+
         public enum PostProcessingQuality
         {
             OFF,
@@ -27,18 +31,45 @@ namespace UnityStarterProject
         public PostProcessingQuality postProcessingMode = PostProcessingQuality.HIGH;
         public FxAntiAliasingQuality antiAliasingQuality = FxAntiAliasingQuality.FXAA;
 
-        public Resolution GetCurrentResolution()
+        private void Start()
         {
-            return Screen.currentResolution;
+            postProcessingMode = (PostProcessingQuality)PlayerPrefs.GetInt(postProcessPref);
+            antiAliasingQuality = (FxAntiAliasingQuality)PlayerPrefs.GetInt(antiAliasingPref);
         }
 
         public void SetResolution(Resolution resolutionToSet)
         {
+            Screen.SetResolution(resolutionToSet.width, resolutionToSet.height, Screen.fullScreenMode, resolutionToSet.refreshRate);
+        }
+
+        public Resolution GetCurrentResolution()
+        {
+            Resolution resolution = new Resolution
+            {
+                width = Screen.width,
+                height = Screen.height,
+                refreshRate = Screen.currentResolution.refreshRate
+            };
+
+            return resolution;
+        }
+
+        public void SetFullscreen(FullScreenMode mode)
+        {
+            Resolution resolution = GetCurrentResolution();
+            Screen.SetResolution(resolution.width, resolution.height, mode, resolution.refreshRate);
+        }
+
+        public FullScreenMode GetCurrentFullscreen()
+        {
+            return Screen.fullScreenMode;
         }
 
         public void SetQuality(int index)
         {
+            int vsync = GetVsync();
             QualitySettings.SetQualityLevel(index);
+            SetVsync(vsync);
         }
 
         public int GetQuality()
@@ -78,7 +109,13 @@ namespace UnityStarterProject
 
         public void SetAntiAliasing(int level)
         {
-            QualitySettings.antiAliasing = level;
+            antiAliasingQuality = (FxAntiAliasingQuality)level;
+            PlayerPrefs.SetInt(antiAliasingPref, level);
+        }
+
+        public FxAntiAliasingQuality GetAntiAliasing()
+        {
+            return antiAliasingQuality;
         }
 
         public void SetSoftParticles(bool setting)
@@ -116,9 +153,20 @@ namespace UnityStarterProject
             QualitySettings.vSyncCount = mode;
         }
 
+        public int GetVsync()
+        {
+            return QualitySettings.vSyncCount;
+        }
+
         public void SetPostProcessingQuality(int quality)
         {
             postProcessingMode = (PostProcessingQuality)quality;
+            PlayerPrefs.SetInt(postProcessPref, quality);
+        }
+
+        public PostProcessingQuality GetPostProcessingQuality()
+        {
+            return postProcessingMode;
         }
 
         public void SetFxAntiAliasingQuality(int quality)

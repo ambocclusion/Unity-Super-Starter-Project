@@ -10,12 +10,12 @@ namespace UnityStarterProject.UiStarterGame
         public Transform currentChild;
         public float StartSpeed = .3f;
         [HideInInspector] public float currentSpeed;
-        private float speedToAdd = .3f;
+        private const float speedToAdd = .3f;
 
         private Transform lastCurrentChild;
         [HideInInspector] public bool animating = false;
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (currentChild != null)
             {

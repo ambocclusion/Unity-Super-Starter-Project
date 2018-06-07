@@ -74,6 +74,7 @@ namespace UnityStarterProject
         public void UnPauseGame()
         {
             CurrentState = GameStates.RUNNING;
+            Input.ResetInputAxes();
         }
     }
 }

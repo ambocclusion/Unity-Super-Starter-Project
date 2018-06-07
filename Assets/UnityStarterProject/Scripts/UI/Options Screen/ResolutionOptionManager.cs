@@ -5,46 +5,53 @@ using UnityEngine.UI;
 
 namespace UnityStarterProject.UI.OptionsMenu
 {
-    public class ResolutionOptionManager : MonoBehaviour
+    public class ResolutionOptionManager : MenuOption
     {
-        public Dropdown dropdown;
+        private Resolution[] resolutions;
+        private List<string> resolutionOptions = new List<string>();
 
         private void Awake()
         {
-            Resolution currentResolution = QualityManager.Instance.GetCurrentResolution();
-
-            Resolution[] resolutions = Screen.resolutions;
-            List<string> resolutionOptions = new List<string>();
+            resolutions = Screen.resolutions;
 
             dropdown.ClearOptions();
 
-            foreach(Resolution res in resolutions)
+            foreach (Resolution res in resolutions)
             {
                 resolutionOptions.Add(GetResolutionFormat(res));
             }
 
-            if(resolutionOptions.Find(r => r == GetResolutionFormat(currentResolution)) == null)
-            {
-                resolutionOptions.Insert(0, GetResolutionFormat(currentResolution));
-            }
-            else
-            {
-                dropdown.value = resolutionOptions.IndexOf(GetResolutionFormat(currentResolution));
-            }
-
             dropdown.AddOptions(resolutionOptions);
 
+            Canvas.ForceUpdateCanvases();
+
             dropdown.onValueChanged.AddListener(OptionChanged);
+        }
+
+        public override void UpdateValues()
+        {
+            Resolution currentResolution = QualityManager.Instance.GetCurrentResolution();
+
+            for (int i = 0; i < resolutions.Length; i++)
+            {
+                if (resolutions[i].height == currentResolution.height &&
+                    resolutions[i].width == currentResolution.width &&
+                    resolutions[i].refreshRate == currentResolution.refreshRate)
+                {
+
+                    dropdown.value = i;
+                }
+            }
+        }
+
+        protected override void OptionChanged(int selection)
+        {
+            QualityManager.Instance.SetResolution(resolutions[selection]);
         }
 
         private string GetResolutionFormat(Resolution resolution)
         {
             return string.Format("{0} x {1} : {2}hz", resolution.width, resolution.height, resolution.refreshRate);
-        }
-
-        private void OptionChanged(int selection)
-        {
-            
         }
     }
 }
