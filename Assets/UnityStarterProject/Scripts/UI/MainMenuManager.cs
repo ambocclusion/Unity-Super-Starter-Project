@@ -27,7 +27,9 @@ namespace UnityStarterProject
 
         public void ResetSettings()
         {
+            PlayerPrefs.DeleteAll();
             QualityManager.Instance.ResetSettings();
+            AudioManager.Instance.ResetSettings();
         }
 
         public void ChangeScene(string name)

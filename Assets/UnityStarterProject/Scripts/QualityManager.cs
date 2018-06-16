@@ -49,7 +49,6 @@ namespace UnityStarterProject
 
         public void ResetSettings()
         {
-            PlayerPrefs.DeleteAll();
             SetQuality(3);
         }
 

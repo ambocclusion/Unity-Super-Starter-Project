@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/UnityStarterProject/Scenes/Main Menu.unity
     guid: 46cdc60f6468f6d49af3f7d7ec749614
   - enabled: 1
-    path: Assets/UnityStarterProject/Scenes/GameScene.unity
-    guid: f688950962f64744686c899f7258fc4c
-  - enabled: 1
-    path: Assets/UnityStarterProject/Scenes/2DGameScene.unity
+    path: Assets/UnityStarterProject/Game Examples/2D Game Scene/2DGameScene.unity
     guid: 1549e41c757bc174b80afe7c0285b524
+  - enabled: 1
+    path: Assets/UnityStarterProject/Game Examples/3D Game Scene/GameScene.unity
+    guid: f688950962f64744686c899f7258fc4c
   m_configObjects: {}

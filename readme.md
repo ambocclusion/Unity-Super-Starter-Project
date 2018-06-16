@@ -18,3 +18,7 @@ Made by Allen-Michael Brower
 Unity-ThirdPersonController by dbrizov
 https://github.com/dbrizov/Unity-ThirdPersonController
 Used under MIT License
+
+Sunglasses by Loyalty Freak Music
+http://freemusicarchive.org/music/Loyalty_Freak_Music/INSTRUMENTAL_RB_BEATS_TO_SING_OR_RAP_ON/Loyalty_Freak_Music_-_INSTRUMENTAL_RB_BEATS_TO_SING_OR_RAP_ON_-_01_Sunglasses
+Public Domain
