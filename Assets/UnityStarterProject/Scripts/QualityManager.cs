@@ -171,6 +171,11 @@ namespace UnityStarterProject
             QualitySettings.softParticles = setting;
         }
 
+        public bool GetSoftParticles()
+        {
+            return QualitySettings.softParticles;
+        }
+
         public void SetRealtimeReflectionProbes(bool setting)
         {
             QualitySettings.realtimeReflectionProbes = setting;
@@ -179,6 +184,11 @@ namespace UnityStarterProject
         public void SetShadowMaskMode(int mode)
         {
             QualitySettings.shadowmaskMode = (ShadowmaskMode)mode;
+        }
+
+        public int GetShadowMaskMode()
+        {
+            return (int)QualitySettings.shadowmaskMode;
         }
 
         public void SetShadowSetting(int mode)
@@ -191,9 +201,19 @@ namespace UnityStarterProject
             QualitySettings.shadowResolution = (ShadowResolution)mode;
         }
 
+        public int GetShadowResolution()
+        {
+            return (int)QualitySettings.shadowResolution;
+        }
+
         public void SetShadowDistance(float distance)
         {
             QualitySettings.shadowDistance = distance;
+        }
+
+        public float GetShadowDistance()
+        {
+            return QualitySettings.shadowDistance;
         }
 
         public void SetVsync(int mode)
