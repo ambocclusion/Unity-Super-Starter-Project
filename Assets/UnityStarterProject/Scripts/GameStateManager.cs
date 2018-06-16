@@ -34,6 +34,8 @@ namespace UnityStarterProject
             }
 
             base.Awake();
+
+            PauseScreen.SetActive(false);
         }
 
         private void Update()

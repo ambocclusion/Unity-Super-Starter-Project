@@ -154,7 +154,53 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 224586056092083934, guid: 2c352c5ededa73a488fc86d115e45d71,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224353742083379938, guid: 2c352c5ededa73a488fc86d115e45d71,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224353742083379938, guid: 2c352c5ededa73a488fc86d115e45d71,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224353742083379938, guid: 2c352c5ededa73a488fc86d115e45d71,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224353742083379938, guid: 2c352c5ededa73a488fc86d115e45d71,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224374728390581746, guid: 2c352c5ededa73a488fc86d115e45d71,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224374728390581746, guid: 2c352c5ededa73a488fc86d115e45d71,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224374728390581746, guid: 2c352c5ededa73a488fc86d115e45d71,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224374728390581746, guid: 2c352c5ededa73a488fc86d115e45d71,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114676509770892928, guid: 2c352c5ededa73a488fc86d115e45d71, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 2c352c5ededa73a488fc86d115e45d71, type: 2}
   m_IsPrefabParent: 0
 --- !u!43 &15346716
