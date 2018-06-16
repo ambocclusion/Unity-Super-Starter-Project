@@ -28,6 +28,12 @@ public class Character : MonoBehaviour
     private float currentHorizontalSpeed; // In meters/second
     private float currentVerticalSpeed; // In meters/second
 
+    [SerializeField]
+    private AudioClip stepSound;
+    [SerializeField]
+    private float stepSoundRate = .35f;
+    private float lastStepSound = 0.0f;
+
     #region Unity Methods
 
     protected virtual void Awake()
@@ -45,6 +51,22 @@ public class Character : MonoBehaviour
 
         this.UpdateHorizontalSpeed();
         this.ApplyMotion();
+
+        if (isWalking) stepSoundRate = .75f;
+        if (isJogging) stepSoundRate = .5f;
+        if (isSprinting) stepSoundRate = .35f;
+
+        if (HorizontalVelocity != Vector3.zero && IsGrounded && Time.time >= lastStepSound + stepSoundRate)
+        {
+            AudioManager.SoundParams s = new AudioManager.SoundParams()
+            {
+                pitch = Random.Range(0.1f, 2.0f),
+                volume = .65f
+            };
+
+            AudioManager.Instance.PlaySound(stepSound, transform.position - (Vector3.up * .5f), parameters: s);
+            lastStepSound = Time.time;
+        }
     }
 
     #endregion Unity Methods

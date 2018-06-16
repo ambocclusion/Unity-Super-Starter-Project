@@ -25,6 +25,7 @@ public class AudioManager : Singleton<AudioManager>
             this.source.spatialBlend = parameters.isMusic ? 0 : 1f;
             this.source.maxDistance = 500f;
             this.source.minDistance = 1f;
+            this.source.pitch = parameters.pitch;
             this.source.Play();
             this.obj = obj;
             endTime = Time.time + soundPlaying.length;
@@ -44,6 +45,7 @@ public class AudioManager : Singleton<AudioManager>
     public class SoundParams
     {
         public float volume = 1f;
+        public float pitch = 1f;
         public bool loop = false;
         public string subtitle = "";
         public bool isMusic = false;

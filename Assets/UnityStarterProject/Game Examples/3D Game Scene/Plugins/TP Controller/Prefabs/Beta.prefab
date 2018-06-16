@@ -2109,6 +2109,8 @@ MonoBehaviour:
     rotationSmoothing: 15
     orientRotationToMovement: 1
     useControlRotation: 0
+  stepSound: {fileID: 8300000, guid: 1291a7602fff85f48ad71c149d2cc10d, type: 3}
+  stepSoundRate: 0.35
 --- !u!114 &11447828
 MonoBehaviour:
   m_ObjectHideFlags: 1
