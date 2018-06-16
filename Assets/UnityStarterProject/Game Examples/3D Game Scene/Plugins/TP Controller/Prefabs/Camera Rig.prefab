@@ -252,7 +252,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   stopNaNPropagation: 1
-  antialiasingMode: 0
+  antialiasingMode: 1
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
