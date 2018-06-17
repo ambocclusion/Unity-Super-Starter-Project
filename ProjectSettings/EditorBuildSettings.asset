@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UnityStarterProject/Game Examples/3D Game Scene/GameScene.unity
     guid: f688950962f64744686c899f7258fc4c
+  - enabled: 1
+    path: Assets/UnityStarterProject/Game Examples/VR Game Scene/VrGameScene.unity
+    guid: 49b5c3e60b0adca40a339c92ef35793d
   m_configObjects: {}
