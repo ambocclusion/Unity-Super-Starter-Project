@@ -674,9 +674,6 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 3
-  cloudProjectId: 24ff1069-8f53-4df2-8528-d1a96ccdc6ab
-  projectName: Unity Starter Project
-  organizationId: spacetronaut
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
