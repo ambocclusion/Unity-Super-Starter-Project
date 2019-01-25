@@ -29,7 +29,7 @@ public class Character : MonoBehaviour
     private float currentVerticalSpeed; // In meters/second
 
     [SerializeField]
-    private AudioClip stepSound;
+    private AudioClip stepSound = null;
     [SerializeField]
     private float stepSoundRate = .35f;
     private float lastStepSound = 0.0f;
